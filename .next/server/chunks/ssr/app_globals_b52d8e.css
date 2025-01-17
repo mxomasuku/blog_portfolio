@@ -310,16 +310,36 @@ img, video {
   margin-bottom: 5rem;
 }
 
+.mt-20 {
+  margin-top: 5rem;
+}
+
 .flex {
   display: flex;
+}
+
+.w-10\/12 {
+  width: 83.3333%;
 }
 
 .w-11\/12 {
   width: 91.6667%;
 }
 
+.flex-row {
+  flex-direction: row;
+}
+
 .flex-col {
   flex-direction: column;
+}
+
+.place-items-center {
+  place-items: center;
+}
+
+.gap-1 {
+  gap: .25rem;
 }
 
 .gap-10 {
@@ -330,12 +350,12 @@ img, video {
   gap: 4rem;
 }
 
-.gap-5 {
-  gap: 1.25rem;
-}
-
 .gap-2\.5 {
   gap: .625rem;
+}
+
+.gap-5 {
+  gap: 1.25rem;
 }
 
 .bg-neutral-100 {
@@ -355,14 +375,14 @@ img, video {
   font-family: var(--font-poppins), sans-serif;
 }
 
-.text-6xl {
-  font-size: 3.75rem;
-  line-height: 1;
-}
-
 .text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
+}
+
+.text-6xl {
+  font-size: 3.75rem;
+  line-height: 1;
 }
 
 .text-lg {
@@ -394,22 +414,62 @@ img, video {
   transition-duration: .15s;
 }
 
-:root {
-  --background: #fff;
-  --foreground: #171717;
+.article {
+  margin-bottom: 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+  font-family: var(--font-poppins), sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  letter-spacing: .025em;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.article > h1 {
+  text-align: center;
+  font-family: var(--font-cormorant-garamond), serif;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  letter-spacing: -.025em;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.article > h2 {
+  font-family: var(--font-cormorant-garamond), serif;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  letter-spacing: -.025em;
+}
+
+.article > ol {
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
+  display: flex;
+  list-style-type: decimal;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.article > pre {
+  overflow: scroll;
+  --tw-bg-opacity: 1;
+  background-color: rgb(10 10 10 / var(--tw-bg-opacity, 1));
+  padding: 1.25rem;
+  --tw-text-opacity: 1;
+  color: rgb(250 250 250 / var(--tw-text-opacity, 1));
+}
+
+.article > blockquote {
+  border-left-width: 2px;
+  border-color: rgb(82 82 82 / var(--tw-border-opacity, 1));
+  --tw-border-opacity: .4;
+  padding-left: 1.25rem;
+  font-style: italic;
+}
+
+.article > p > img {
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
 
 .hover\:text-amber-700:hover {

@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, Poppins } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import Header from "@/components/Header";
+import PageTransition from "@/components/PageTransition";
 
 const cormorant_Garamond = Cormorant_Garamond({
   subsets: ["latin"],
@@ -36,8 +38,17 @@ export default function RootLayout({
          enableSystem
          disableTransitionOnChange
         >
+<Header/>
+<PageTransition>
+<div className="mx-auto w-11/12 md:w-1/2 flex flex-col gap-16 mb-20">
 
-        {children}
+{children}
+
+</div>
+
+</PageTransition>
+
+       
         </ThemeProvider>
       
       </body>

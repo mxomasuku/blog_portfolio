@@ -18,7 +18,7 @@ const ArticleItemList:React.FC<ArticleItemProps> = ({category, articles}) => {
 {articles.map((article, id) => (
     <Link href={`/${article.id}`} 
     key={id}
-    className="text-neutral-900 hover:text-amber-700 transition duration-150"
+    className=" hover:text-red-400 transition duration-150"
     >
         {article.title}
     </Link>

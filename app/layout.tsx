@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Poppins } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const cormorant_Garamond = Cormorant_Garamond({
   subsets: ["latin"],
@@ -25,11 +26,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
-        className={`${cormorant_Garamond.variable} ${poppins.variable} antialiased bg-neutral-100`}
+        className={`${cormorant_Garamond.variable} ${poppins.variable} antialiased`}
       >
+        <ThemeProvider
+         attribute="class"
+         defaultTheme="system"
+         enableSystem
+         disableTransitionOnChange
+        >
+
         {children}
+        </ThemeProvider>
+      
       </body>
     </html>
   );

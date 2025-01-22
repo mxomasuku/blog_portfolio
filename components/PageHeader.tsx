@@ -7,7 +7,7 @@ interface PageHeaderProps {
 const PageHeader: React.FC<PageHeaderProps>  = ({pageTitle}) => {
   return (
   
-    <h1 className="font-cormorantGaramond font-light text-6xl  text-center">
+    <h1 className="font-cormorantGaramond font-light text-6xl  text-center mb-8">
 {pageTitle}
     </h1>
   )

@@ -9,6 +9,8 @@ interface ArticleItemProps {
 
 
 const ArticleItemList:React.FC<ArticleItemProps> = ({category, articles}) => {
+
+  console.log(articles, "article list card")
   return (
     <div className="flex flex-col gap-5">
         <h2 className="font-cormorantGaramond text-4xl">
@@ -16,7 +18,7 @@ const ArticleItemList:React.FC<ArticleItemProps> = ({category, articles}) => {
         </h2>
         <div className="flex flex-col gap-2.5 font-poppins text-lg">
 {articles.map((article, id) => (
-    <Link href={`/${article.id}`} 
+    <Link href={`/blog/${article.id}`} 
     key={id}
     className=" hover:text-red-400 transition duration-150"
     >

@@ -27,6 +27,29 @@
 .article > p > img {
   @apply w-1/2 mx-auto
 }
+.article > a {
+  @apply text-red-400
+}
+
+.article table {
+  @apply w-full border-collapse border border-neutral-700;
+}
+
+.article th {
+  @apply bg-neutral-800 text-white font-semibold py-3 px-4 text-left border border-neutral-700;
+}
+
+.article td {
+  @apply py-2 px-4 border border-neutral-700;
+}
+
+.article tr:nth-child(even) {
+  @apply bg-neutral-900;
+}
+
+.article tr:nth-child(odd) {
+  @apply bg-neutral-800;
+}
 
 @layer base {
   :root {

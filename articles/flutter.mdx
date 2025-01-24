@@ -1,0 +1,52 @@
+---
+id: 'xj128u3u38'
+title: 'An Introduction To Flutter Widget Lifecycle'
+date: '2025-01-24'
+summary: 'The three methods and rules'
+category: 'Flutter'
+---
+
+Coming from a React background and the nightmare that came with useEffect, componentDidMount and other Component related nightmares,
+I made it a point to understand the Flutter Widget Lifecycle. I imagine my understanding of the basics in theory will
+be key in driving how I optimize my app perfomance and handle conditional rendering. (No different from React I hope)
+
+
+## We start here:
+
+There are 3 key method/functions to understand in the Widget Lifecycle:
+1. initState()
+2. build()
+3. dispose()
+
+
+### initState()
+ initState as the name suggests is for initialising state. But more specifically, in Stateful Widget.
+
+#### Anatomy of initState()
+`initState() {`
+
+`super.initState()`
+
+`}`
+
+## Good vs Bad Practices in Flutter
+
+| **Good Practices** | **Bad Practices** |
+|--------------------|------------------|
+| Use `initState()` for one-time initialization, 
+call methods that are required only once in a widget 
+lifecycle. | ❌ Don't call `setState` inside `initState()`. You can't set state inside a widget that isn't fully initialized. |
+| Always call `super.initState()`. Don't worry about this though, it normally comes built-in, your only job is to **NOT** delete it. | ❌ Don't make an `async` call inside `initState()`, use a separate method. |
+| Use widget bindings to handle content-dependent actions, like listeners and animation controllers. | ❌ Don't access `BuildContext` directly in `initState()`. |
+| ✅ Use `late` initialization for expensive objects instead of recreating them. | ❌ Don't recreate expensive objects unnecessarily. |
+| ✅ Keep inherited widgets immutable when initializing a widget. | ❌ Don't modify inherited widgets during initialization. |
+| Don't modify inherited widgets when initialising a widget                                                    |     |
+
+## build()
+
+The build() method is executed when the widget is built and called after setState() is called
+
+
+## dispose()
+called right before a conditionally rendered widget is destroyed
+

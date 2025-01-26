@@ -10,7 +10,10 @@
 }
 
 .article > h2 {
-  @apply font-cormorantGaramond text-3xl tracking-tight
+  @apply font-cormorantGaramond text-3xl tracking-tight text-red-400
+}
+.article > h3 {
+  @apply font-cormorantGaramond text-3xl tracking-tight text-red-400
 }
 
 .article > ol {
@@ -28,28 +31,10 @@
   @apply w-1/2 mx-auto
 }
 .article > a {
-  @apply text-red-400
+  @apply text-red-400 hover:text-red-500 bg-yellow-500;
+  text-decoration: none; 
 }
 
-.article table {
-  @apply w-full border-collapse border border-neutral-700;
-}
-
-.article th {
-  @apply bg-neutral-800 text-white font-semibold py-3 px-4 text-left border border-neutral-700;
-}
-
-.article td {
-  @apply py-2 px-4 border border-neutral-700;
-}
-
-.article tr:nth-child(even) {
-  @apply bg-neutral-900;
-}
-
-.article tr:nth-child(odd) {
-  @apply bg-neutral-800;
-}
 
 @layer base {
   :root {

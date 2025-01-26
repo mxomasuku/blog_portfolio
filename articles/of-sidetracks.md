@@ -20,7 +20,7 @@ Now I am interested in Mastery, going for those boogeyman concepts in Typescript
 
 ## What I am working on now,
 
-Before doing the deep-dive into Next, I first had to plunge into Typescript, this is my [playground ](https://github.com/mxomasuku/typescript/)repo. Still in its infancy, but will be maintained every day! 30 days of Typescript on my terms, my way. 
+Before doing the deep-dive into Next, I first had to plunge into Typescript, this is my [playground](https://github.com/mxomasuku/typescript/)repo. Still in its infancy, but will be maintained every day! 30 days of Typescript on my terms, my way. 
 
 02/08/24
 Found this [great resource for learning Typescript through challenges](https://github.com/type-challenges/type-challenges) . Great for the mind 

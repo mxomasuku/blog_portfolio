@@ -13,7 +13,7 @@ const getSortedArticles = (): ArticleItem[] => {
     const fileNames = fs.readdirSync(articlesDirectory)
 
     const allArticlesData = fileNames.map((fileName) => {
-        const id = fileName.replace(/\.mdx$/, "")
+        const id = fileName.replace(/\.md$/, "")
 
         const fullPath = path.join(articlesDirectory, fileName)
         const fileContents = fs.readFileSync(fullPath, "utf-8")
@@ -23,6 +23,7 @@ const getSortedArticles = (): ArticleItem[] => {
             id, 
             title: matterResult.data.title,
             date: matterResult.data.date,
+            summary: matterResult.data.summary,
             category: matterResult.data.category
         }
     })
@@ -61,7 +62,7 @@ export const getCategorisedArticles = (): Record<string, ArticleItem[]> => {
 }
 
 export const getArticleData = async (id: string) => {
-    const fullPath = path.join(articlesDirectory, `${id}.mdx`)
+    const fullPath = path.join(articlesDirectory, `${id}.md`)
     const fileContents = fs.readFileSync(fullPath, "utf-8")
     const matterResult = matter(fileContents)
     const processedContent = await remark()

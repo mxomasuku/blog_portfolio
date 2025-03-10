@@ -40,7 +40,7 @@ export default function RootLayout({
          disableTransitionOnChange
         >
 <Header/>
-<div className="mx-auto w-11/12 md:w-1/2 flex flex-col gap-16 mb-20"> 
+<div className="mx-auto w-11/12 md:w-3/5 flex flex-col gap-16 mb-20"> 
 
 {/* <PageTransition> */}
 

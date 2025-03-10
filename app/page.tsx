@@ -1,7 +1,9 @@
 import PageHeader from "@/components/PageHeader";
+import ProjectsCard from "@/components/ProjectsCard";
 import Image from "next/image";
 import Link from "next/link";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { sampleProjects } from '@/data/projects'
 
 export default function Home() {
   const pageTitle = "Home Page";
@@ -12,7 +14,7 @@ export default function Home() {
 
       {/* Hero Section */}
       <div className="flex flex-col md:flex-row gap-8 items-center justify-between">
-        <div className="text-center md:text-left">
+        <div className="text-center md:text-left flex-1">
           <h1 className="text-3xl font-bold mb-2">Hi, 👋, I'm [Mxo Masuku] </h1>
           <p className="text-lg text-gray-600">
             A passionate Software Developer skilled in React, Node, TypeScript, Firebase, and Flutter.
@@ -25,8 +27,16 @@ export default function Home() {
         </div>
 
         {/* Profile Image */}
-        <div className="rounded-full overflow-hidden w-48 h-48 border-4 border-green-400">
-          <Image src="/profile.jpg" alt="Profile Picture" width={200} height={200} />
+        <div className="flex-shrink-0">
+          <div className="rounded-full overflow-hidden w-48 h-48 border-4 border-green-400">
+            <Image 
+              src="/profile.jpg" 
+              alt="Profile Picture" 
+              width={200} 
+              height={200}
+              className="object-cover"
+            />
+          </div>
         </div>
       </div>
 
@@ -43,17 +53,11 @@ export default function Home() {
       </section>
 
       {/* Projects */}
-      <section className="mt-8">
-        <h2 className="text-xl font-semibold mb-4">Projects</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="p-4 border rounded-md shadow">
-            <h3 className="text-lg font-semibold">Project Name</h3>
-            <p className="text-sm text-gray-600">Short project description...</p>
-            <Link href="https://github.com/yourrepo" className="text-green-500 mt-2 inline-block">View on GitHub
-            </Link>
-          </div>
-        </div>
-      </section>
+      <div className="flex flex-wrap w-full gap-6">
+        {sampleProjects.map((project) => (
+          <ProjectsCard key={project.id} project={project} />
+        ))}
+      </div>
 
       {/* Social Links */}
       <section className="mt-8 text-center">

@@ -6,3 +6,10 @@ export type ArticleItem = {
     category: string,
 
 }
+
+export interface Project {
+    id: number;
+    name: string
+    description: string;
+    link: string;
+}

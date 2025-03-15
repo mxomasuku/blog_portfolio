@@ -10,7 +10,6 @@ const pageTitle = "Projects"
 <PageHeader pageTitle={pageTitle}/>
 
 
-ajsjsjsju
     </MainPage>
 
 

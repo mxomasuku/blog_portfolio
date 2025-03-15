@@ -15,7 +15,7 @@ export default function Home() {
       {/* Hero Section */}
       <div className="flex flex-col md:flex-row gap-8 items-center justify-between">
         <div className="text-center md:text-left flex-1">
-          <h1 className="text-3xl font-bold mb-2">Hi, 👋, I'm [Mxo Masuku] </h1>
+        <h1 className="text-3xl font-bold mb-2">Hi, 👋, I&apos;m [Mxo Masuku]</h1>
           <p className="text-lg text-gray-600">
             A passionate Software Developer skilled in React, Node, TypeScript, Firebase, and Flutter.
           </p>

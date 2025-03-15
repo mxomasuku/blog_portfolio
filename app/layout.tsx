@@ -1,4 +1,4 @@
-import type { Metadata, ResolvedMetadata } from "next";
+import type { Metadata} from "next";
 import { Cormorant_Garamond, Poppins } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";

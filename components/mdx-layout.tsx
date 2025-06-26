@@ -6,7 +6,10 @@ export default function  MdxLayout  ({children}: {children: React.ReactNode})  {
   <div>
     <PageHeader pageTitle='Try'/>
 
+<div className='px-5 md:px-0 max-w-4xl mx-auto prose'>
 {children}
+</div>
+
   </div>
   )
 }

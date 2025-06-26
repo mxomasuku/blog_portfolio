@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@plugin "@tailwindcss/typography";
 
 .article {
   @apply flex flex-col gap-3 font-poppins text-lg tracking-wide mb-20

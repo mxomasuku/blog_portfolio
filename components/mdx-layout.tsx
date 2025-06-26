@@ -1,13 +1,23 @@
 import React from 'react'
-import PageHeader from './PageHeader'
+import Thumbnail from './Thumbnail'
+import SyntaxHightlighter from './SyntaxHightlighter'
 
 export default function  MdxLayout  ({children}: {children: React.ReactNode})  {
+  const isProduction = process.env.NODE_ENV === "production";
   return (
   <div>
-    <PageHeader pageTitle='Try'/>
 
-<div className='px-5 md:px-0 max-w-4xl mx-auto prose'>
+<div className='px-5 md:px-0 max-w-4xl mx-auto prose dark:prose-invert'>
+  <Thumbnail/>
+
+  {isProduction ?   <SyntaxHightlighter>
 {children}
+  </SyntaxHightlighter> : 
+  <div>
+    {children}
+    </div> }
+
+
 </div>
 
   </div>

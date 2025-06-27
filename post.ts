@@ -14,4 +14,12 @@ export const posts: IPost[] = [{
     date: "2025-01-24",
     category: "Flutter",
     thumbnail: "/images/thumbnails/flutter.jpg"
+},
+{
+    title: "Solution Architecture - A Freelancer's Systems Thinking Primer",
+    slug: "solutions_architecture_notes",
+    author: "Mxo Masuku",
+    date: "2025-01-27",
+    category: "Systems Thinking",
+    thumbnail: "/images/thumbnails/system_thinking.png"
 }]

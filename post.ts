@@ -22,4 +22,13 @@ export const posts: IPost[] = [{
     date: "2025-01-27",
     category: "Systems Thinking",
     thumbnail: "/images/thumbnails/system_thinking.png"
-}]
+},
+{
+    title: "Handling Build Context After An Async Gap",
+    slug: "handling_build_context",
+    author: "Mxo Masuku",
+    date: "2025-01-29",
+    category: "Flutter",
+    thumbnail: "/images/thumbnails/flutter.jpg"
+},
+]

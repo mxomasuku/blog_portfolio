@@ -12,7 +12,7 @@ const Blog = () => {
       <PageHeader pageTitle={pageTitle} />
 
  <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-4">
-  {posts.map((post, idx) => (
+  {posts.reverse().map((post, idx) => (
     <Link
       key={idx}
       href={`/blog/${post.slug}`}

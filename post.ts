@@ -31,4 +31,21 @@ export const posts: IPost[] = [{
     category: "Flutter",
     thumbnail: "/images/thumbnails/flutter.jpg"
 },
+
+{
+    title: "Intro To Simple Flutter State Management With Provider",
+    slug: "state_mgmt_with_provider",
+    author: "Mxo Masuku",
+    date: "2025-02-2",
+    category: "Flutter",
+    thumbnail: "/images/thumbnails/flutter.jpg"
+},
+{
+    title: "Dart's Extension Method",
+    slug: "dart_extensions",
+    author: "Mxo Masuku",
+    date: "2025-02-6",
+    category: "Flutter",
+    thumbnail: "/images/thumbnails/flutter.jpg"
+},
 ]

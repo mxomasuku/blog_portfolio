@@ -1,0 +1,85 @@
+import MdxLayout from "@/components/mdx-layout"
+
+<MdxLayout>
+
+## Dart's Extension Method 
+
+
+Today I learnt about dart’s extension method which you can use to extend any class, (even custom classes) to prevent writing lots of boilerplate code.
+
+
+> to be fair, i don't see myself really writing any custom extension methods anytime `soon` but i thought it would be nice to have my own in-house point of reference.
+
+If you are here and you are not me (well because i read my notes everytime when I feel the urge to doomscroll), 
+
+[this video offers a better visual lesson that this note ever will.](https://www.youtube.com/watch?v=D3j0OSfT9ZI)
+
+### Working with an extension method would look something like this
+
+```dart
+extension Name on Class {
+
+bool get isName {
+
+return something
+
+}
+}
+```
+
+How you would use this depends on the use case. but before we go there, here is a simpler real world example of where this might work, for email validation:
+
+```dart
+extension EmailValidation on String {
+bool get isEmail {
+   final regex = RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$');
+   return regex.hasMatch(this)
+}
+}
+
+then use it like
+
+.........
+
+import your helper uptop
+
+final isValid = emailInput.isEmail;
+
+TextField(
+  decoration: InputDecoration(
+    hintText: 'Email',
+    focusedBorder: OutlineInputBorder(
+      borderSide: BorderSide(
+        color: emailInput.isEmail ? Colors.green : Colors.red,
+      ),
+    ),
+  ),
+);
+```
+
+this line
+
+```dart
+ color: emailInput.isEmail ? Colors.green : Colors.red,
+```
+
+saves us from doing this each time we want to check an input
+
+```dart
+final isValid = RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$').hasMatch(emailInput);
+
+TextField(
+decoration: InputDecoration(
+hintText: 'Email',
+focusedBorder: OutlineInputBorder(
+borderSide: BorderSide(
+color: RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$')
+.hasMatch(emailInput)
+? Colors.green
+: Colors.red,
+),
+),
+),
+);
+```
+</MdxLayout>

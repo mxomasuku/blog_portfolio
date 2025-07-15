@@ -48,4 +48,20 @@ export const posts: IPost[] = [{
     category: "Flutter",
     thumbnail: "/images/thumbnails/flutter.jpg"
 },
+{
+    title: "iOS and Android Errors After Installing Firebase in Your Project",
+    slug: "ios_and_android_errors_on_firebase_installation",
+    author: "Mxo Masuku",
+    date: "2025-02-13",
+    category: "Flutter",
+    thumbnail: "/images/thumbnails/flutter.jpg"
+},
+{
+    title: "Software Architecture and the Future for Software Developers (Especially If You Wanna Build a SaaS)",
+    slug: "architecture_for_saas_future",
+    author: "Mxo Masuku",
+    date: "2025-03-21",
+    category: "Architecture",
+    thumbnail: "/images/thumbnails/system_thinking.png"
+},
 ]

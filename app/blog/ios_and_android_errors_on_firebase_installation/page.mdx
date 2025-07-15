@@ -1,0 +1,125 @@
+import MdxLayout from "@/components/mdx-layout"
+
+<MdxLayout>
+# iOS and Android Errors After Installing Firebase in Your Project
+
+Setting up Firebase in Flutter is pretty intuitive — simple, really. You only have to [follow these docs](https://firebase.google.com/docs/flutter/setup?platform=ios#next_steps) to get there.
+
+The problem, however, starts when you’ve done this:
+
+```dart
+void main() async {
+  await Firebase.initializeApp();
+  runApp(MyApp());
+}
+```
+
+…and you hit `flutter run`. You’ll likely encounter two errors related to Firebase. Here’s how to handle them properly.
+
+>  Assumes your `pubspec.yaml` has the necessary firebase_* packages set, and you’ve verified with:
+> ```bash
+> flutter doctor -v
+> ```
+
+You can also check the platform-specific deployment docs:
+- [Android](https://docs.flutter.dev/deployment/android#review-the-gradle-build-configuration)
+- [iOS](https://docs.flutter.dev/deployment/ios)
+- [macOS](https://docs.flutter.dev/deployment/macos)
+
+---
+
+## Android
+
+###  Error:
+
+```
+PlatformException(channel-error,
+Unable to establish connection on channel: 
+"dev.flutter.pigeon.firebase_auth_platform_interface.FirebaseAuthHostApi.registerIdTokenListener")
+```
+
+### Fix:
+
+This error is caused by a mismatch between Flutter’s configured NDK version and Firebase’s minimum required NDK version.
+
+Open: `android/app/build.gradle.kts`
+
+```kotlin
+android {
+    namespace = "com.example.mockify"
+    compileSdk = flutter.compileSdkVersion
+    ndkVersion = "27.0.12077973" // <- update to minimum required
+    defaultConfig {
+        minSdk = 23 // <- required by Firebase Auth
+    }
+}
+```
+
+Also run:
+
+```bash
+flutter doctor --android-licenses
+```
+
+---
+
+## iOS
+
+### Problem:
+
+You’ve updated your deployment target in Xcode but Firebase still complains.
+
+### Fix:
+
+1. Open your project in Xcode:
+
+```bash
+cd ios && open Runner.xcworkspace
+```
+
+2. Then in `ios/Podfile`, update this line:
+
+```ruby
+platform :ios, '13.0' # <- set to Firebase's required minimum
+```
+
+3. Clean and rebuild everything:
+
+```bash
+flutter clean
+rm ios/Podfile.lock
+rm -rf ios/Pods
+rm -rf ios/.symlinks
+rm -rf ios/Flutter/Flutter.framework
+rm -rf ios/Flutter/Flutter.podspec
+flutter pub get
+cd ios
+pod install
+cd ..
+```
+
+---
+
+## Long-Term Maintenance
+
+Every time you update Firebase dependencies or Flutter SDK:
+
+```bash
+flutter doctor --android-licenses
+```
+
+Re-check:
+- `minSdkVersion` (Android)
+- `platform :ios` (iOS)
+- `ndkVersion` (Android)
+
+---
+
+## Reference Docs
+
+- [Firebase Flutter Setup](https://firebase.google.com/docs/flutter/setup?platform=ios)
+- [Flutter Android Deployment](https://docs.flutter.dev/deployment/android)
+- [Flutter iOS Deployment](https://docs.flutter.dev/deployment/ios)
+- [Flutter macOS Deployment](https://docs.flutter.dev/deployment/macos)
+
+</MdxLayout>

@@ -13,6 +13,7 @@ export default {
       padding: "15px",
     },
     screens: {
+      xs: "480px",
       sm: "640px",
       md: "768px",
       lg: "960px",
@@ -28,6 +29,15 @@ export default {
       fontFamily: {
         cormorantGaramond: ["var(--font-cormorant-garamond)", "serif"],
         poppins: ["var(--font-poppins)", "sans-serif"],
+      },
+     keyframes: {
+      fadeIn: {
+        "0%": { opacity: "0" },
+        "100%": { opacity: "1" },
+      } as const,
+    },
+      animation: {
+        fadeIn: "fadeIn 0.5s ease-in-out",
       },
       borderRadius: {
         lg: "var(--radius)",

@@ -7,7 +7,7 @@ const links = [
   { name: "blog", path: "/blog" },
   { name: "projects", path: "/projects" },
   { name: "work", path: "/work" },
-  { name: "funstuff", path: "/funstuff" },
+  // { name: "funstuff", path: "/funstuff" },
 ];
 
 const Nav = () => {

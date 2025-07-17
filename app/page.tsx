@@ -20,11 +20,12 @@ export default function Home() {
       </section>
 
       {/* Authority Section */}
-      <section className="text-center mb-12">
-        <p className="text-xl font-semibold">
-          +2500 hours and 2 long term contracts on Upwork
-        </p>
-      </section>
+  <section className="text-center mb-12">
+  <p className="text-xl font-semibold">
+    <span className="text-4xl font-extrabold text-primary">+2500</span> hours and
+    <span className="text-4xl font-extrabold text-primary ml-2">2</span> long-term contracts on Upwork
+  </p>
+</section>
 
       {/* Favourite Project */}
       <section className="flex flex-col md:flex-row items-center gap-8 mb-16">

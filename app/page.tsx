@@ -1,5 +1,6 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -64,6 +65,14 @@ export default function Home() {
           Most devs build. I question why we build what we build.
         </p>
       </section>
+<section className="mt-4 flex justify-center min-h-screen">
+  <div>
+    <Link href="/contact">
+      <Button className="animate-bounce">Contact Me</Button>
+    </Link>
+  </div>
+</section>
+     
 
     </main>
   );

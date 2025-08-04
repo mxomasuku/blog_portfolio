@@ -3,7 +3,7 @@ export interface IPost {
     slug: string;
     author: string;
     date: string;
-    category: string;
+    category: string[];
     thumbnail: string;
 }
 
@@ -12,7 +12,7 @@ export const posts: IPost[] = [{
     slug: "flutter",
     author: "Mxo Masuku",
     date: "2025-01-24",
-    category: "Flutter",
+    category: ["Flutter"],
     thumbnail: "/images/thumbnails/flutter.jpg"
 },
 {
@@ -20,7 +20,7 @@ export const posts: IPost[] = [{
     slug: "solutions_architecture_notes",
     author: "Mxo Masuku",
     date: "2025-01-27",
-    category: "Systems Thinking",
+    category: ["Systems Thinking", "Architecture"],
     thumbnail: "/images/thumbnails/system_thinking.png"
 },
 {
@@ -28,7 +28,7 @@ export const posts: IPost[] = [{
     slug: "handling_build_context",
     author: "Mxo Masuku",
     date: "2025-01-29",
-    category: "Flutter",
+    category: ["Flutter"],
     thumbnail: "/images/thumbnails/flutter.jpg"
 },
 
@@ -37,7 +37,7 @@ export const posts: IPost[] = [{
     slug: "state_mgmt_with_provider",
     author: "Mxo Masuku",
     date: "2025-02-2",
-    category: "Flutter",
+    category: ["Flutter"],
     thumbnail: "/images/thumbnails/flutter.jpg"
 },
 {
@@ -45,7 +45,7 @@ export const posts: IPost[] = [{
     slug: "dart_extensions",
     author: "Mxo Masuku",
     date: "2025-02-6",
-    category: "Flutter",
+    category: ["Flutter"],
     thumbnail: "/images/thumbnails/flutter.jpg"
 },
 {
@@ -53,7 +53,7 @@ export const posts: IPost[] = [{
     slug: "ios_and_android_errors_on_firebase_installation",
     author: "Mxo Masuku",
     date: "2025-02-13",
-    category: "Flutter",
+    category: ["Flutter"],
     thumbnail: "/images/thumbnails/flutter.jpg"
 },
 {
@@ -61,7 +61,15 @@ export const posts: IPost[] = [{
     slug: "architecture_for_saas_future",
     author: "Mxo Masuku",
     date: "2025-03-21",
-    category: "Architecture",
+    category: ["Architecture"],
     thumbnail: "/images/thumbnails/system_thinking.png"
+},
+{
+    title: "Test Firebase Auth with Node.js and Emulators: Why You Need Server-Created Session Cookies",
+    slug: "firebase_auth_session_cookies",
+    author: "Mxo Masuku",
+    date: "2025-08-04",
+    category: ["Node.js", "Firebase", "Security", "Backend"],
+    thumbnail: "/images/thumbnails/node_firebase.png"
 },
 ]

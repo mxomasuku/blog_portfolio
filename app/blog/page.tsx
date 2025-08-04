@@ -27,9 +27,16 @@ const Blog = () => {
           className="object-cover transition-all duration-300 group-hover:scale-105"
         />
       </div>
-      <p className="text-xs bg-gray-100 dark:bg-gray-700/95 text-blue-700 dark:text-blue-500 font-semibold my-2 w-fit px-2 py-1 rounded-sm">
-        {post.category}
+
+      <div className="flex flex-wrap gap-2">
+      {post.category.map((category, idx) => (
+      <p key={idx} className="text-xs bg-gray-100 dark:bg-gray-700/95 mt- text-blue-700 dark:text-blue-500 font-semibold my-2 w-fit px-2 py-1 rounded-sm">
+        {category}
       </p>
+     ))}
+      </div>
+ 
+     
       <h2 className="mt-2 text-sm font-semibold text-gray-900 dark:text-white line-clamp-2">
         {post.title}
       </h2>

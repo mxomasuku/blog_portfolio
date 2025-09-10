@@ -68,8 +68,16 @@ export const posts: IPost[] = [{
     title: "Test Firebase Auth with Node.js and Emulators: Why You Need Server-Created Session Cookies",
     slug: "firebase_auth_session_cookies",
     author: "Mxo Masuku",
-    date: "2025-08-04",
+    date: "2025-06-04",
     category: ["Node.js", "Firebase", "Security", "Backend"],
     thumbnail: "/images/thumbnails/node_firebase.png"
 },
+{
+    title: "Auth Flow Blueprint — React 19 + Express + Firebase",
+    slug: "frontend_auth_flow_blueprint",
+    author: "Mxo Masuku",
+    date: "2025-06-10",
+    category: ["React", "Firebase",],
+    thumbnail: "/images/thumbnails/node_firebase.png"
+}
 ]

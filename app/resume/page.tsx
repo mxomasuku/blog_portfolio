@@ -35,7 +35,7 @@ export default function WorkPage() {
 
           <StaggerItem>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              From teaching science to building scalable software. A timeline of my professional growth and technical evolution, with a focus on Full-stack development, Flutter, and Systems Design.
+              A timeline of my professional growth and technical evolution, with a focus on Full-stack development, Flutter, and Systems Design.
             </p>
           </StaggerItem>
         </StaggerContainer>

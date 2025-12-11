@@ -25,17 +25,22 @@ export default {
         foreground: "var(--foreground)",
         primary: "var(--primary)",
         "primary-foreground": "var(--primary-foreground)",
+        muted: "var(--muted)",
+        "muted-foreground": "var(--muted-foreground)",
+        accent: "var(--accent)",
+        "accent-foreground": "var(--accent-foreground)",
       },
       fontFamily: {
+        display: ["var(--font-syne)", "system-ui", "sans-serif"],
         cormorantGaramond: ["var(--font-cormorant-garamond)", "serif"],
         poppins: ["var(--font-poppins)", "sans-serif"],
       },
-     keyframes: {
-      fadeIn: {
-        "0%": { opacity: "0" },
-        "100%": { opacity: "1" },
-      } as const,
-    },
+      keyframes: {
+        fadeIn: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        } as const,
+      },
       animation: {
         fadeIn: "fadeIn 0.5s ease-in-out",
       },

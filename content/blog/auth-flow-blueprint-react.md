@@ -1,15 +1,18 @@
-import MdxLayout from "@/components/mdx-layout"
+---
+title: "Auth Flow Blueprint — React 19 + Express + Firebase"
+description: "A complete authentication blueprint for React 19 with RTK Query frontend and Express + Firebase Admin backend using secure session cookies."
+date: "2025-06-10"
+author: "Mxo Masuku"
+categories: ["React", "Firebase", "Authentication", "Backend"]
+featured: true
+draft: false
+---
 
-<MdxLayout>
+This is Part 2 of my series on building secure Firebase apps. In Part 1, I focused on building a secure backend. Now, I'm tackling the next step — connecting the frontend to the backend, and making sure we fully leverage our backend flow and Firebase's secure session cookie structure without dropping the ball.
 
+Think of it as a personal checklist for fast, headache-free development. It's a record of what works, what breaks, and what needs to be locked in so I don't end up stuck in "prompt hell" next time I do this.
 
-# Auth Flow Blueprint — React 19 + Express + Firebase
-
-This is Part 2 of my series on building secure Firebase apps. In Part 1, I focused on building a secure backend. Now, I’m tackling the next step — connecting the frontend to the backend, and making sure we fully leverage our backend flow and Firebase’s secure session cookie structure without dropping the ball.
-
-Think of it as a personal checklist for fast, headache-free development. It’s a record of what works, what breaks, and what needs to be locked in so I don’t end up stuck in “prompt hell” next time I do this.
-
-⸻
+---
 
 **Goal:**  
 Cookie-based authentication for a **React 19 + RTK Query** frontend and an **Express + Firebase Admin** backend.  
@@ -62,6 +65,7 @@ res.status(200).json({ message: 'Logged out' });
 ```
 
 **CORS (single mount):**
+
 ```ts
 const ORIGINS = ['http://localhost:5173', process.env.FRONTEND_ORIGIN!].filter(Boolean);
 app.use(cors({
@@ -73,6 +77,7 @@ app.use(express.json());
 ```
 
 **Guard (use on protected routes):**
+
 ```ts
 export async function verifySessionCookie(req,res,next){
   const c = req.cookies?.session;
@@ -117,6 +122,7 @@ export const { useMeQuery, useLoginMutation, useLogoutMutation } = authApi;
 ```
 
 **Login page redirect (sessionStorage):**
+
 ```ts
 const stored = sessionStorage.getItem('postLoginRedirect');
 let to = stored && stored.startsWith('/') ? stored : '/drivers';
@@ -125,6 +131,7 @@ navigate(to, { replace: true });
 ```
 
 **Protected route wrapper:**
+
 ```tsx
 function Protected({ children }:{children:React.ReactNode}){
   const { data, isLoading } = useMeQuery();
@@ -165,7 +172,7 @@ function Protected({ children }:{children:React.ReactNode}){
 
 - **Cookie rejected:** cross-site + `SameSite=Lax` → use `SameSite=None; Secure; HTTPS`.
 - **Still 401 after login:** cookie flags wrong, CORS mismatch, or forgot `credentials:'include'`.
-- **Long login URL:** you’re appending tokens/`from` to query; move it to `sessionStorage`.
+- **Long login URL:** you're appending tokens/`from` to query; move it to `sessionStorage`.
 - **Express 5 route crash:** no `*` in paths; avoid `app.options('*', ...)` → not allowed.
 
 ---
@@ -186,13 +193,10 @@ export default defineConfig({
 
 ---
 
-### 📝 Takeaways
+## Takeaways
+
 1. Implement `/auth/login`, `/auth/me`, `/auth/logout` first — everything else depends on them.
 2. Configure CORS once, with credentials enabled.
 3. Use RTK base query with a global 401 redirect to `/login`.
 4. Guard protected pages with `<Protected/>`.
 5. Test cookie + `/auth/me` before building any UI.
-
----
-
-</MdxLayout>

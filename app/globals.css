@@ -6,38 +6,79 @@
 .article {
   @apply flex flex-col gap-3 font-poppins text-lg tracking-wide mb-20
 }
-.article > h1 {
+
+.article>h1 {
   @apply font-cormorantGaramond text-4xl text-center tracking-tight
 }
 
-.article > h2 {
-  @apply font-cormorantGaramond text-3xl tracking-tight text-red-400
-}
-.article > h3 {
+.article>h2 {
   @apply font-cormorantGaramond text-3xl tracking-tight text-red-400
 }
 
-.article > ol {
+.article>h3 {
+  @apply font-cormorantGaramond text-3xl tracking-tight text-red-400
+}
+
+.article>ol {
   @apply list-decimal flex flex-col mx-10 gap-2
 }
 
-.article > pre {
+.article>pre {
   @apply bg-neutral-950 text-neutral-50 p-5 overflow-scroll
 }
-.article > blockquote {
+
+.article>blockquote {
   @apply pl-5 italic border-l-2 border-neutral-600 border-opacity-40
 }
 
-.article > p > img {
+.article>p>img {
   @apply w-1/2 mx-auto
 }
-.article > a {
+
+.article>a {
   @apply text-red-400 hover:text-red-500 bg-yellow-500;
-  text-decoration: none; 
+  text-decoration: none;
 }
 
 
 @layer base {
   :root {
+    /* Core colors - Light mode */
+    --background: #ffffff;
+    --foreground: #0a0a0a;
+
+    /* Primary - Orange for button hover */
+    --primary: #f97316;
+    --primary-foreground: #ffffff;
+
+    /* Muted colors */
+    --muted: #f4f4f5;
+    --muted-foreground: #71717a;
+
+    /* Accent */
+    --accent: #f97316;
+    --accent-foreground: #0a0a0a;
+
+    /* Other */
     --dialog-overlay-background: rgba(0, 0, 0, 0.5);
-    --radius: 0.5rem}}
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    /* Core colors - Dark mode */
+    --background: #030303;
+    --foreground: #fafafa;
+
+    /* Primary - Orange for button hover */
+    --primary: #f97316;
+    --primary-foreground: #ffffff;
+
+    /* Muted colors */
+    --muted: #27272a;
+    --muted-foreground: #a1a1aa;
+
+    /* Accent */
+    --accent: #f97316;
+    --accent-foreground: #fafafa;
+  }
+}

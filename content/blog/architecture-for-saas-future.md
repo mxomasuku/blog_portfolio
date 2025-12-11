@@ -1,21 +1,25 @@
-import MdxLayout from "@/components/mdx-layout"
-
-<MdxLayout>
-
-## Software Architecture and the Future for Software Developers (Especially If You Wanna Build a SaaS)
+---
+title: "Software Architecture and the Future for Software Developers"
+description: "Why understanding systems architecture is crucial for developers who want to build SaaS products and become indie hackers."
+date: "2025-03-21"
+author: "Mxo Masuku"
+categories: ["Architecture", "Systems Thinking", "Career"]
+featured: true
+draft: false
+---
 
 I have two things I strongly feel about the future of code and my career:
 
-### 1. Code Is Becoming a Cheap Commodity
+## 1. Code Is Becoming a Cheap Commodity
 
-AI is now churning out high-quality code. The days of the programmer are slowly fading. Soon, we’ll be telling AI what to write, and then just read it, check for bugs and then use AI to run tests on AI-generated code.
+AI is now churning out high-quality code. The days of the programmer are slowly fading. Soon, we'll be telling AI what to write, and then just read it, check for bugs and then use AI to run tests on AI-generated code.
 
 What this means is:
-- There’s less value in writing code,
+- There's less value in writing code,
 - More value in understanding the *context* where that code is needed,
-- And even more value in **organizing that code** so it’s easy to maintain and evolve.
+- And even more value in **organizing that code** so it's easy to maintain and evolve.
 
-### 2. Most Devs Aren’t Indie Hackers — Here’s Why
+## 2. Most Devs Aren't Indie Hackers — Here's Why
 
 I also believe the reason why there is many of us developers but very few startup indie-hackers is because few of us understand **systems architecture** and how to design models that support a business.
 
@@ -23,7 +27,7 @@ We might know how to lay bricks, but the real value lies in **pioneering the str
 
 There are millions of devs, but only a few actual startup builders. Why? Because most of us are trained to execute, not to design.
 
-You can lay bricks — cool. But can you imagine the building? Can you sketch the whole city? That’s the real skill.
+You can lay bricks — cool. But can you imagine the building? Can you sketch the whole city? That's the real skill.
 
 ---
 
@@ -35,16 +39,16 @@ You can lay bricks — cool. But can you imagine the building? Can you sketch th
 
 Simon Brown is a genius. His delivery is chill and his insights cut deep.
 
-#### **THE KEY TAKEAWAY IS SIMPLE:**
+### THE KEY TAKEAWAY IS SIMPLE:
 
 - Know what you want to build.
-- Know if it’s actually worth building.
+- Know if it's actually worth building.
 
 (*So simple, but the real question is are we doing it right*)
 
 ---
 
-## The Developer’s Cheat Sheet (Straight from the Lecture)
+## The Developer's Cheat Sheet (Straight from the Lecture)
 
 ### 1. Software Architecture Is NOT About Big Design Upfront
 
@@ -52,37 +56,32 @@ This part literally broke my heart, because just last semester at uni, I was cra
 
 > "I believe in this concept (from the '90s), but the implementation above is risky and invites failure."
 
-![Old Design Pattern](/blog_images/old_software_process_model.png)
+Imagine that! And this is still the stuff we're being taught in 2025. On paper it looks good so organised that its tempting.
 
-Imagine that! And this is still the stuff we’re being taught in 2025. On paper it looks good so organised that its tempting
-
-
-### So What’s The Alternative To Not Having a Big Design Plan?
+### So What's The Alternative To Not Having a Big Design Plan?
 
 - Respond to change over following a plan.
-- Just because you shouldn’t do big design upfront doesn’t mean **no design** is the alternative.
+- Just because you shouldn't do big design upfront doesn't mean **no design** is the alternative.
 - Begin with a **primitive whole** (an MVP), then evolve it.
 
 The advantage? You get feedback fast, develop faster, and ship even faster.
 
-> "Your initial design isn’t about creating a master plan — it’s about creating direction. Establishing a starting point. Arranging a room just good enough for your dev efforts or team to settle in."
-
-![Simon Brown](/blog_images/simon_brown.png)
+> "Your initial design isn't about creating a master plan — it's about creating direction. Establishing a starting point. Arranging a room just good enough for your dev efforts or team to settle in."
 
 ### 2. Architecture Is a Process
 
-It’s not a one-off diagram you email and ghost. It’s a **living system**.
+It's not a one-off diagram you email and ghost. It's a **living system**.
 
 - Feedback from code → redesign → iterate.
-- If you’re calling yourself a software architect and not touching code… respectfully, you’re LARPing.
+- If you're calling yourself a software architect and not touching code… respectfully, you're LARPing.
 
 ### 3. Every Team Needs a Technical Leader
 
-If that’s you — own it.
+If that's you — own it.
 - Learn the **breadth** (business, dev, user needs).
 - Master the **depth** (code, performance, domain logic).
 
-If you’re solo: sharpen both blades.
+If you're solo: sharpen both blades.
 
 ### 4. Forget UML — Just Use a Whiteboard
 
@@ -97,7 +96,8 @@ It goes back to: **you should know what you want to build.**
 
 Your diagrams should be **understandable**, even to non-technical people.
 
-#### Simon’s Go-To? The C4 Model:
+### Simon's Go-To? The C4 Model:
+
 - **Context**
 - **Containers**
 - **Components**
@@ -107,7 +107,7 @@ Draw what matters. Make it relatable.
 
 You can check Simon Brown's video on C4 Model [here](https://www.youtube.com/watch?v=LYzOc7vI-Uo)
 
-**NB:** You aren’t chasing perfection — you’re chasing mental clarity.
+**NB:** You aren't chasing perfection — you're chasing mental clarity.
 
 ---
 
@@ -115,20 +115,20 @@ You can check Simon Brown's video on C4 Model [here](https://www.youtube.com/wat
 
 The main objective of software architecture is to structure stuff that is **significant** and foundational to your core software design.
 
-And what’s *significant*?
-> Anything that’s expensive to change later.
+And what's *significant*?
+> Anything that's expensive to change later.
 
 Think deeply about this:
 - How long or how much will it cost you to change whatever item you put in your design?
 
-That’s your north star.
+That's your north star.
 
 ---
+
 ## More articles on this topic
 
-[Clean Architecture](https://medium.com/@rudrakshnanavaty/clean-architecture-7c1b3b4cb181)
-
-[Simon Brown's Resources on Architecture and C4 Model](https://simonbrown.je/)
+- [Clean Architecture](https://medium.com/@rudrakshnanavaty/clean-architecture-7c1b3b4cb181)
+- [Simon Brown's Resources on Architecture and C4 Model](https://simonbrown.je/)
 
 ---
 
@@ -136,8 +136,4 @@ I believe the future belongs to **System Thinkers**.
 
 I run a small Discord for system thinkers — devs who care about architecture, clarity, and building real things.
 
-👉 [Join us here](https://discord.gg/HrqrGevJJP) *(it’s cold now, but you could be the spark).*
-
-
-
-</MdxLayout>
+👉 [Join us here](https://discord.gg/HrqrGevJJP) *(it's cold now, but you could be the spark).*

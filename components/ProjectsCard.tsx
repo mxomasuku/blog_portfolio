@@ -2,16 +2,16 @@ import Link from "next/link"
 import { Project } from "@/types"
 
 interface ProjectsCardProps {
-    project: Project
+  project: Project
 }
 
 const ProjectsCard: React.FC<ProjectsCardProps> = ({ project }) => {
   return (
     <div className="w-full md:w-[calc(50%-12px)] p-6 border rounded-lg shadow-md hover:shadow-lg transition-shadow">
-      <h3 className="text-xl font-semibold mb-3">{project.name}</h3>
+      <h3 className="text-xl font-semibold mb-3">{project.title}</h3>
       <p className="text-sm text-gray-600 mb-4">{project.description}</p>
-      <Link 
-        href={project.link} 
+      <Link
+        href={project.github ? project.github : "#"}
         className="text-green-500 hover:text-green-600 font-medium inline-flex items-center gap-2 transition-colors"
         target="_blank"
         rel="noopener noreferrer"

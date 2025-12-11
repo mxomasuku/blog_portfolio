@@ -2,27 +2,43 @@ import { Project } from "@/types"
 
 export const sampleProjects: Project[] = [
   {
-    id: 1,
-    name: "E-commerce Platform",
+    id: "dhddoo",
+    title: "E-commerce Platform",
     description: "A full-stack e-commerce platform built with Next.js, TypeScript, and Tailwind CSS. Features include user authentication, product catalog, and shopping cart functionality.",
-    link: "https://github.com/username/ecommerce-platform"
+    github: "https://github.com/username/ecommerce-platform",
+    year: "2024",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "React", "Node.js", "Express", "PostgreSQL", "REST APIs", "Cloud Run"],
+    role: "Full Stack Developer",
+    featured: true
   },
   {
-    id: 2,
-    name: "Weather Dashboard",
+    id: "doodoo",
+    title: "Weather Dashboard",
     description: "Real-time weather application that displays current weather conditions and forecasts using OpenWeatherMap API. Built with React and Chart.js.",
-    link: "https://github.com/username/weather-dashboard"
+    github: "https://github.com/username/weather-dashboard",
+    year: "2024",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "React", "Node.js", "Express", "PostgreSQL", "REST APIs", "Cloud Run"],
+    role: "Full Stack Developer",
+    featured: true
   },
   {
-    id: 3,
-    name: "Task Management API",
+    id: "doodoods",
+    title: "Task Management API",
     description: "RESTful API for task management built with Node.js and Express. Includes user authentication, task CRUD operations, and project organization features.",
-    link: "https://github.com/username/task-management-api"
+    github: "https://github.com/username/task-management-api",
+    year: "2024",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "React", "Node.js", "Express", "PostgreSQL", "REST APIs", "Cloud Run"],
+    role: "Full Stack Developer",
+    featured: true
   },
   {
-    id: 4,
-    name: "Portfolio Website",
+    id: "sasaw",
+    title: "Portfolio Website",
     description: "Personal portfolio website showcasing projects and skills. Built with Next.js, TypeScript, and Tailwind CSS. Features responsive design and dark mode.",
-    link: "https://github.com/username/portfolio-website"
+    github: "https://github.com/username/portfolio-website",
+    year: "2024",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "React", "Node.js", "Express", "PostgreSQL", "REST APIs", "Cloud Run"],
+    role: "Full Stack Developer",
+    featured: true
   }
 ]; 

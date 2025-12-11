@@ -1,16 +1,20 @@
-import MdxLayout from "@/components/mdx-layout"
-
-<MdxLayout>
-
-## Intro To Simple Flutter State Management With Provider
+---
+title: "Intro To Simple Flutter State Management With Provider"
+description: "A practical introduction to Flutter state management using Provider with ChangeNotifier, Consumer, and Selector patterns."
+date: "2025-02-02"
+author: "Mxo Masuku"
+categories: ["Flutter", "State Management"]
+featured: false
+draft: false
+---
 
 > This log is a snapshot in time for my first encounter with Flutter State Management.
 
-### What I Did
+## What I Did
 
 My Flutter app was getting messy. Routes were scattered, data like `email` and `username` were floating around without a central source of truth. My solution was to first build a **global shell** — a layout wrapper that manages navigation and global user data (borrowed from React Router & Context API in React). This structural change became the gateway to understanding **state management** in Flutter.
 
-### Enter Provider
+## Enter Provider
 
 For low level Flutter widgets, most docs recommended Flutter's Provider package. 
 
@@ -22,12 +26,11 @@ I particularly liked the analogy ChatGPT gave me to understand the 3 core concep
 
 - `Consumer` is the receiver, any widget/household which cares about said change and must react to it should be wrapped inside the Consumer.
 
-#### 1. ChangeNotifiers (Class)
+### 1. ChangeNotifiers (Class)
 
 * You define a class and extend `ChangeNotifier`.
 * It acts as an **Observable**.
 * Call `notifyListeners()` inside setters to propagate updates.
-
 
 ```dart
 import 'package:flutter/material.dart';
@@ -43,12 +46,10 @@ class UserProvider with ChangeNotifier {
 }
 ```
 
-#### 2. ChangeNotifierProviders (Widget)
+### 2. ChangeNotifierProviders (Widget)
 
 * This widget **injects** your `ChangeNotifier` into the widget tree.
 * Should be placed high up (often in `main.dart`) so all children can access it.
-
-
 
 ```dart
 import 'package:flutter/material.dart';
@@ -68,12 +69,11 @@ void main() {
 }
 ```
 
-#### 3. Consumers (Widget)
+### 3. Consumers (Widget)
 
 * Place as **deep** in the widget tree as possible — only where changes actually matter.
 * Always use the generic: `Consumer<YourNotifier>()`
 * Its builder gives you `(context, notifier, child)` — use `child` wisely to avoid unnecessary rebuilds.
-
 
 ```dart
 Consumer<UserProvider>(
@@ -83,13 +83,11 @@ Consumer<UserProvider>(
 )
 ```
 
-### Bonus Lessons (optimizing your app performance)
+## Bonus Lessons (optimizing your app performance)
 
-* You don’t always need `Consumer`. For actions like clearing a cart, use `Provider.of<YourNotifier>(context, listen: false)` to invoke functions without triggering rebuilds.
+* You don't always need `Consumer`. For actions like clearing a cart, use `Provider.of<YourNotifier>(context, listen: false)` to invoke functions without triggering rebuilds.
 
 Working on follow-up notes on the `Consumer` vs `context.watch` vs `context.read` vs  `Selector` debate. Knowing what to use and when. 
-
-
 
 ```dart
 ElevatedButton(
@@ -102,11 +100,10 @@ ElevatedButton(
 
 * Avoid wrapping entire widgets in `Consumer` — it's inefficient.
 
-#### Selector (Advanced Usage)
+### Selector (Advanced Usage)
 
 * Use `Selector` for fine-grained rebuild control.
 * It only rebuilds when the selected value changes.
-
 
 ```dart
 Selector<UserProvider, String?>(
@@ -117,14 +114,14 @@ Selector<UserProvider, String?>(
 )
 ```
 
-### What I Built
+## What I Built
 
 1. A `UserProvider` that handles user state post-login.
 2. A `FakeFireAuth` mock to simulate auth flows and trigger provider updates (not fully grasped yet — will revisit).
 
 ---
 
-### Where to Next?
+## Where to Next?
 
 I'm now aiming to integrate **global state** with **conditional navigation**, especially around auth and a volatile linking status. My roadmap looks like this:
 
@@ -136,11 +133,7 @@ I'm now aiming to integrate **global state** with **conditional navigation**, es
 
 ---
 
-### Reference
+## Reference
 
-[https://docs.flutter.dev/data-and-backend/state-mgmt/simple](https://docs.flutter.dev/data-and-backend/state-mgmt/simple)
-
-[10 minute Provider Tutorial and Exercise With `context.watch` and `context.read` (no consumer)](https://www.youtube.com/watch?v=FUDhozpnTUw)
-
-</MdxLayout>
-
+- [Flutter State Management Docs](https://docs.flutter.dev/data-and-backend/state-mgmt/simple)
+- [10 minute Provider Tutorial and Exercise With context.watch and context.read](https://www.youtube.com/watch?v=FUDhozpnTUw)

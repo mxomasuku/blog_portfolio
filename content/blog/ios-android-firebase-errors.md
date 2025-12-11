@@ -1,11 +1,16 @@
-import MdxLayout from "@/components/mdx-layout"
-
-<MdxLayout>
-# iOS and Android Errors After Installing Firebase in Your Project
+---
+title: "iOS and Android Errors After Installing Firebase in Your Project"
+description: "How to fix common Firebase setup errors on iOS and Android when integrating with Flutter."
+date: "2025-02-13"
+author: "Mxo Masuku"
+categories: ["Flutter", "Firebase", "Troubleshooting"]
+featured: false
+draft: false
+---
 
 Setting up Firebase in Flutter is pretty intuitive — simple, really. You only have to [follow these docs](https://firebase.google.com/docs/flutter/setup?platform=ios#next_steps) to get there.
 
-The problem, however, starts when you’ve done this:
+The problem, however, starts when you've done this:
 
 ```dart
 void main() async {
@@ -14,9 +19,9 @@ void main() async {
 }
 ```
 
-…and you hit `flutter run`. You’ll likely encounter two errors related to Firebase. Here’s how to handle them properly.
+…and you hit `flutter run`. You'll likely encounter two errors related to Firebase. Here's how to handle them properly.
 
->  Assumes your `pubspec.yaml` has the necessary firebase_* packages set, and you’ve verified with:
+> Assumes your `pubspec.yaml` has the necessary firebase_* packages set, and you've verified with:
 > ```bash
 > flutter doctor -v
 > ```
@@ -30,7 +35,7 @@ You can also check the platform-specific deployment docs:
 
 ## Android
 
-###  Error:
+### Error:
 
 ```
 PlatformException(channel-error,
@@ -40,7 +45,7 @@ Unable to establish connection on channel:
 
 ### Fix:
 
-This error is caused by a mismatch between Flutter’s configured NDK version and Firebase’s minimum required NDK version.
+This error is caused by a mismatch between Flutter's configured NDK version and Firebase's minimum required NDK version.
 
 Open: `android/app/build.gradle.kts`
 
@@ -67,7 +72,7 @@ flutter doctor --android-licenses
 
 ### Problem:
 
-You’ve updated your deployment target in Xcode but Firebase still complains.
+You've updated your deployment target in Xcode but Firebase still complains.
 
 ### Fix:
 
@@ -121,5 +126,3 @@ Re-check:
 - [Flutter Android Deployment](https://docs.flutter.dev/deployment/android)
 - [Flutter iOS Deployment](https://docs.flutter.dev/deployment/ios)
 - [Flutter macOS Deployment](https://docs.flutter.dev/deployment/macos)
-
-</MdxLayout>

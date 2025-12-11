@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { useState,  useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "./ui/button";
 import { ModeToggle } from "./ModeToggler";
@@ -23,7 +23,7 @@ const Header = () => {
     } else {
       document.removeEventListener("mousedown", handleClickOutside);
     }
-  
+
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
@@ -56,30 +56,30 @@ const Header = () => {
       </div>
 
       {/* Mobile Nav Menu */}
-    
 
-<AnimatePresence>
-  {isOpen && (
-    <motion.div
-      ref={menuRef}
-      className="md:hidden shadow-md px-4 py-6"
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -10 }}
-      transition={{ duration: 0.25, ease: "easeInOut" }}
-    >
-      <div className="flex flex-col gap-4">
-        <Nav />
-        <Link href="/contact" onClick={() => setIsOpen(false)}>
-          <Button className="w-full">Contact Me</Button>
-        </Link>
-        <div className="self-start">
-          <ModeToggle />
-        </div>
-      </div>
-    </motion.div>
-  )}
-</AnimatePresence></header>
+
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            ref={menuRef}
+            className="md:hidden shadow-md px-4 py-6"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.25, ease: "easeInOut" }}
+          >
+            <div className="flex flex-col gap-4">
+              <Nav />
+              <Link href="/contact" onClick={() => setIsOpen(false)}>
+                <Button className="w-full">Contact Me</Button>
+              </Link>
+              <div className="self-start">
+                <ModeToggle />
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence></header>
   );
 };
 

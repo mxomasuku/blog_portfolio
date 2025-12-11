@@ -1,12 +1,14 @@
-import MdxLayout from "@/components/mdx-layout"
+---
+title: "Dart's Extension Method"
+description: "Learn how to use Dart's extension methods to add functionality to existing classes without modifying them."
+date: "2025-02-06"
+author: "Mxo Masuku"
+categories: ["Flutter", "Dart"]
+featured: false
+draft: false
+---
 
-<MdxLayout>
-
-## Dart's Extension Method 
-
-
-Today I learnt about dart’s extension method which you can use to extend any class, (even custom classes) to prevent writing lots of boilerplate code.
-
+Today I learnt about dart's extension method which you can use to extend any class, (even custom classes) to prevent writing lots of boilerplate code.
 
 > to be fair, i don't see myself really writing any custom extension methods anytime `soon` but i thought it would be nice to have my own in-house point of reference.
 
@@ -14,7 +16,7 @@ If you are here and you are not me (well because i read my notes everytime when 
 
 [this video offers a better visual lesson that this note ever will.](https://www.youtube.com/watch?v=D3j0OSfT9ZI)
 
-### Working with an extension method would look something like this
+## Working with an extension method would look something like this
 
 ```dart
 extension Name on Class {
@@ -36,11 +38,11 @@ bool get isEmail {
    return regex.hasMatch(this)
 }
 }
+```
 
-then use it like
+Then use it like this:
 
-.........
-
+```dart
 import your helper uptop
 
 final isValid = emailInput.isEmail;
@@ -57,13 +59,13 @@ TextField(
 );
 ```
 
-this line
+This line:
 
 ```dart
- color: emailInput.isEmail ? Colors.green : Colors.red,
+color: emailInput.isEmail ? Colors.green : Colors.red,
 ```
 
-saves us from doing this each time we want to check an input
+Saves us from doing this each time we want to check an input:
 
 ```dart
 final isValid = RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$').hasMatch(emailInput);
@@ -82,4 +84,3 @@ color: RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$')
 ),
 );
 ```
-</MdxLayout>

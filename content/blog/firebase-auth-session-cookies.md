@@ -1,12 +1,16 @@
-import MdxLayout from "@/components/mdx-layout"
-
-<MdxLayout>
-
-# Testing Firebase Auth with Node.js and Emulators: Why You *Need* Server-Created Session Cookies
+---
+title: "Testing Firebase Auth with Node.js and Emulators: Why You Need Server-Created Session Cookies"
+description: "A guide on how to overcome Firebase client SDK limitations when testing a pure Node.js and Firebase backend."
+date: "2025-06-04"
+author: "Mxo Masuku"
+categories: ["Node.js", "Firebase", "Security", "Backend"]
+featured: false
+draft: false
+---
 
 > A quick guide on how to overcome firebase client sdk limitations when testing a pure node and firebase backend
 
-I wrote this article as a note to self. Everyone’s obsessed with speed in app development — faster UIs, faster time to market, faster deployment. But backend speed only matters **if your foundation is stable**. And nothing breaks your backend more often — or more silently — than sloppy authentication logic.
+I wrote this article as a note to self. Everyone's obsessed with speed in app development — faster UIs, faster time to market, faster deployment. But backend speed only matters **if your foundation is stable**. And nothing breaks your backend more often — or more silently — than sloppy authentication logic.
 
 So I went looking for a better way that I can reuse and trust as I build more Node.Js and Firebase backends.
 
@@ -21,24 +25,22 @@ This is a step-by-step guide with a sample project, code, and deep dive into how
 
 ---
 
-## The Problem: Firebase’s Client SDK Doesn’t Work on the Backend
+## The Problem: Firebase's Client SDK Doesn't Work on the Backend
 
-Let’s say you're building a dashboard or internal admin panel. Naturally, you want to:
+Let's say you're building a dashboard or internal admin panel. Naturally, you want to:
 
 - Accept an email/password login
 - Log in the user from your backend
 - Create a session you can trust
 
+However, firebase's `signInWithEmailAndPassword()` **only exists in the frontend SDK** — it doesn't work in Node.js. That's a problem if you're trying to test your backend auth flows *before* the frontend is ready.
 
-However, firebase’s `signInWithEmailAndPassword()` **only exists in the frontend SDK** — it doesn’t work in Node.js. That’s a problem if you’re trying to test your backend auth flows *before* the frontend is ready.
-
-if you try to use signInWithEmailAndPassword on you api in postman you get an error like this:
+If you try to use signInWithEmailAndPassword on your api in postman you get an error like this:
 
 ```
 email || !password) return res.status(400).json({ error: 'Missing credentials' });
 Property 'idToken' does not exist on type 'unknown'.ts(2339)
 ```
-
 
 ---
 
@@ -56,7 +58,7 @@ firebase emulators:start --only auth
 
 ### Step 2: Create `emulated-auth.ts`
 
-Here’s the file that does the magic:
+Here's the file that does the magic:
 
 ```ts
 // utils/emulated-auth.ts
@@ -96,13 +98,13 @@ This is safe because you're using **localhost emulators**, not live Firebase.
 
 ## Problem: ID Tokens Expire in 1 Hour
 
-The token returned by Firebase is short-lived — about 1 hour. It’s designed for frontend use where the SDK auto-refreshes it. But on the server, you're not doing that.
+The token returned by Firebase is short-lived — about 1 hour. It's designed for frontend use where the SDK auto-refreshes it. But on the server, you're not doing that.
 
 You don't want to rely on storing refresh tokens or forcing re-auth every hour.
 
 ---
 
-## ✅ Solution: Server-Created Session Cookies
+## Solution: Server-Created Session Cookies
 
 This is where **Firebase Admin SDK** shines. You can turn the 1-hour token into a **secure, long-lasting cookie** that:
 
@@ -111,7 +113,7 @@ This is where **Firebase Admin SDK** shines. You can turn the 1-hour token into 
 - Is verified on the server
 - Works great for SSR, admin tools, or traditional apps
 
-### Here’s how to do it:
+### Here's how to do it:
 
 ```ts
 // controllers/loginUser.ts
@@ -150,12 +152,11 @@ export const loginUser = async (req: Request, res: Response) => {
 
 ---
 
-##  Quick Summary
-	•	If you’re using Firebase directly in the frontend → go with idToken.
+## Quick Summary
 
-	•	If you’re building an Express backend and want real security → session cookies are non-negotiable.
-
-	•	Don’t store idToken in localStorage unless you’re okay with the XSS risk.
+- If you're using Firebase directly in the frontend → go with idToken.
+- If you're building an Express backend and want real security → session cookies are non-negotiable.
+- Don't store idToken in localStorage unless you're okay with the XSS risk.
 
 ---
 
@@ -175,7 +176,7 @@ Content-Type: application/json
 
 ### 2. Cookie is now set:
 
-You’ll get a `Set-Cookie: session=...` header. Future requests just send that cookie.
+You'll get a `Set-Cookie: session=...` header. Future requests just send that cookie.
 
 ---
 
@@ -191,7 +192,7 @@ Add this as a middleware to protect routes.
 
 ---
 
-##  Key Takeaways
+## Key Takeaways
 
 - **Don't** rely on Firebase client SDK in your Node.js backend
 - **Use Axios** to mimic login calls during testing
@@ -200,13 +201,10 @@ Add this as a middleware to protect routes.
 
 ---
 
-##  Sample Repo 
+## Sample Repo 
 
 Want a starter project with this exact setup? → [github.com/mxomasuku/firebase_patterns/firebase-auth-session-cookie-demo](#)
 
 ---
 
-
 *Written by Mxolisi Masuku — full-stack dev, system designer, and slightly obsessed with fixing broken dashboards.*
-
-</MdxLayout>

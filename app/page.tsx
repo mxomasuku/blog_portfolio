@@ -1,9 +1,15 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
+import { motion } from "framer-motion";
 
+const fadeInUp = {
+  initial: { opacity: 0, y: 40 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] }
+};
 
 export default function Home() {
   return (
@@ -14,16 +20,16 @@ export default function Home() {
         <p className="text-sm text-gray-600 dark:text-gray-400">
           Full Stack Developer | System Thinker | Minimalist
         </p>
-        <p className="mt-4 text-base text-gray-700 dark:text-gray-300">
-          Crafting thoughtful code and radical digital experiences using React, Flutter, and Firebase.
-        </p>
+
       </section>
+
+
 
       {/* Authority Section */}
       <section className="text-center mb-12">
         <p className="text-xl font-semibold">
-          <span className="text-4xl font-extrabold text-primary">+2500</span> hours and
-          <span className="text-4xl font-extrabold text-primary ml-2">2</span> long-term contracts on Upwork
+          <span className="text-4xl font-extrabold">+2500</span> hours and
+          <span className="text-4xl font-extrabold ml-2">2</span> long-term contracts on Upwork
         </p>
       </section>
 
@@ -31,7 +37,10 @@ export default function Home() {
       <section className="flex flex-col md:flex-row items-center gap-8 mb-16">
         <section className="flex flex-col md:flex-row items-center gap-8 mb-16">
           <div className="flex-1">
-            <h2 className="text-lg font-semibold mb-2">My Favourite Project</h2>
+            <span className="inline-flex items-center gap-3 font-display text-xs font-semibold uppercase tracking-[0.2em] text-primary mb-4">
+              <span className="w-12 h-px bg-primary" />
+              Featured Project
+            </span>
             <h3 className="text-2xl font-bold mb-2">
               Fleet Management Dashboard <span className="text-sm font-normal">(originally designed for personal use)</span>
             </h3>
@@ -58,14 +67,22 @@ export default function Home() {
             </div>
 
             <div className="flex flex-wrap gap-4">
-              <Link
-                href="https://trogern-logistics.web.app"
-                target="_blank"
-                className="px-4 py-2 rounded-md border border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white transition dark:border-gray-100 dark:text-gray-100"
-                aria-label="Go to Dashboard Login"
+
+              <motion.div
+                variants={fadeInUp}
+                className="flex flex-wrap items-center gap-4 pt-4"
               >
-                Sign Up <span className="text-xs font-light">(open beta)</span>
-              </Link>
+
+
+                <Link
+                  href="https://trogern-logistics.web.app"
+                  target="_blank"
+                  className="group inline-flex items-center gap-2 px-6 py-4 font-display text-sm font-medium uppercase tracking-wider text-muted-foreground hover:text-foreground transition-colors duration-300"
+                >
+                  <span>View Project</span>
+                  <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </Link>
+              </motion.div>
             </div>
           </div>
         </section>
@@ -80,15 +97,11 @@ export default function Home() {
       <section className="text-center mb-12">
         <h2 className="text-lg font-semibold mb-2">Philosophy</h2>
         <p className="text-2xl font-bold">
-          I like to build software that gets integrated
+          Always aspire to build software that is intuitively useful to the user
         </p>
       </section>
       <section className="mt-4 flex justify-center">
-        <div>
-          <Link href="/contact">
-            <Button className="animate-bounce">Contact Me</Button>
-          </Link>
-        </div>
+
       </section>
 
 

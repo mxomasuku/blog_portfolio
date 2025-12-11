@@ -1,51 +1,25 @@
 import PageHeader from "@/components/PageHeader";
-import { posts } from "@/post";
-import Link from "next/link";
-import Image from "next/image";
+import { getAllPosts, getAllCategories } from "@/lib/blog";
+import { BlogFilter } from "@/components/BlogFilter";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Blog & Notes | Mxo Masuku",
+  description: "Thoughts on Flutter, React, Firebase, system architecture, and building SaaS products.",
+};
 
 const Blog = () => {
-  const pageTitle = "Welcome to my Blog & Notes";
-  console.log("posts", posts);
+  const pageTitle = "Blog & Notes";
+  const posts = getAllPosts();
+  const categories = getAllCategories();
 
   return (
     <>
       <PageHeader pageTitle={pageTitle} />
 
- <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-4">
-  {posts.reverse().map((post, idx) => (
-    <Link
-      key={idx}
-      href={`/blog/${post.slug}`}
-      className="group w-full p-4 rounded-lg border border-gray-200 dark:border-gray-700 transition-shadow hover:shadow-md"
-    >
-      <div className="relative w-full h-[200px] overflow-hidden rounded-md">
-        <Image
-          src={post.thumbnail}
-          alt={`${post.title} - thumbnail`}
-          fill
-          sizes="100vw"
-          className="object-cover transition-all duration-300 group-hover:scale-105"
-        />
-      </div>
-
-      <div className="flex flex-wrap gap-2">
-      {post.category.map((category, idx) => (
-      <p key={idx} className="text-xs bg-gray-100 dark:bg-gray-700/95 mt- text-blue-700 dark:text-blue-500 font-semibold my-2 w-fit px-2 py-1 rounded-sm">
-        {category}
-      </p>
-     ))}
-      </div>
- 
-     
-      <h2 className="mt-2 text-sm font-semibold text-gray-900 dark:text-white line-clamp-2">
-        {post.title}
-      </h2>
-      <div className="text-gray-500 text-xs space-x-10 py-2">
-        {post.date}
-      </div>
-    </Link>
-  ))}
-</section>
+      <section className="max-w-4xl mx-auto px-4 py-8">
+        <BlogFilter posts={posts} categories={categories} />
+      </section>
     </>
   );
 };

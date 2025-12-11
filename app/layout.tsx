@@ -1,20 +1,27 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Poppins } from "next/font/google";
+import { Instrument_Serif, DM_Sans, Syne } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-const cormorant_Garamond = Cormorant_Garamond({
+const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
-  variable: "--font-cormonant-garamond",
+  variable: "--font-instrument-serif",
   weight: ["400"],
+  style: ["normal", "italic"],
 });
 
-const poppins = Poppins({
+const dmSans = DM_Sans({
   subsets: ["latin"],
-  variable: "--font-poppins",
-  weight: ["400", "600"],
+  variable: "--font-dm-sans",
+  weight: ["300", "400", "500", "600"],
+});
+
+const syne = Syne({
+  subsets: ["latin"],
+  variable: "--font-syne",
+  weight: ["400", "500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
@@ -76,29 +83,29 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${cormorant_Garamond.variable} ${poppins.variable}`}
+      className={`${instrumentSerif.variable} ${dmSans.variable} ${syne.variable}`}
       suppressHydrationWarning
     >
       <head>
 
       </head>
-  <body className="antialiased min-h-screen flex flex-col">
-  <ThemeProvider
-    attribute="class"
-    defaultTheme="light"
-    enableSystem={false}
-    disableTransitionOnChange
-  >
-    <Header />
+      <body className="antialiased min-h-screen flex flex-col font-sans noise-overlay">
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem={false}
+          disableTransitionOnChange
+        >
+          <Header />
 
-    <main className="flex-grow mx-auto w-11/12 md:w-3/5 flex flex-col gap-16 mb-20">
-      {children}
-    </main>
+          <main className="flex-grow">
+            {children}
+          </main>
 
-    <Footer />
-  </ThemeProvider>
-</body>
-   
+          <Footer />
+        </ThemeProvider>
+      </body>
+
     </html>
   );
 }

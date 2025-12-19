@@ -7,29 +7,27 @@ categories: ["Systems Design", "Deployment", "Software Development", "Product En
 featured: false
 draft: false
 ---
-Critical Path Model
+
 
 I picked this concept in Uni a couple of semesters ago and its revolutionised how I perceive rapid software development for purposes of deployment.
 
 
 First I kind of noticed that in the era of AI-assisted development, shipping software has paradoxically become harder. 
 
-Developers are generating thousands of lines of code in days, yet many products never make it to production. Teams get trapped in endless feature development, mistaking progress for momentum. The real bottleneck is no longer code creation. It is deployment.
+Developers qnd vibe coders are building apps in days, yet many of these products never make it to production. Teams get trapped in endless feature development, mistaking progress for momentum. The real problem is no longer code creation. It is deployment.
 
-The Critical Path Model (CPM) exists to solve this exact problem.
-
-CPM is best suited for teams that have been stuck in development for too long, or for founders who want to ship fast in order to test real market viability.
+The Critical Path Model (CPM) exists to solve this exact problem and is suited for teams that have been stuck in development for too long, or for founders who want to ship fast in order to test real market viability.
 
 
 ### What is the Critical Path Model?
 
-The Critical Path Model is a development discipline that forces you to identify the minimum chain of non-negotiable tasks required to ship a viable product to real users.
+It is a development discipline that forces you to identify the minimum chain of non-negotiable tasks required to ship a viable product to real users.
 
 This chain is the critical path.
 
 Any task, feature, or improvement that does not belong to this chain is noise and should be cut. 
 
-The goal of CPM is to enforce developmental discipline and aggressively shorten time-to-deployment. It prevents teams from building features that reflect personal interests or engineering pride, and instead forces focus on what the business actually needs in order to exist.
+The goal of CPM is to enforce developmental discipline. To aggressively shorten time-to-deployment. It prevents teams from building features that reflect personal interests or engineering pride, and instead wants you to focus on what the business actually needs in order to exist.
 
 
 
@@ -46,7 +44,7 @@ This path defines the minimum time required to ship. Nothing outside it affects 
 
 ### What Makes a Task “Critical”? And how avoid over engineering for useless features. 
 
- Every task must which is listed as necessary must first pass a simple filter.
+ Every task which you list as necessary must first pass a simple filter.
 
 For every task, ask:
 

@@ -107,7 +107,7 @@ export default async function BlogPostPage({ params }: PageProps) {
             </header>
 
             {/* Article Content */}
-            <article className="prose prose-neutral dark:prose-invert max-w-none prose-headings:scroll-mt-20 prose-a:text-primary hover:prose-a:underline prose-pre:bg-muted prose-pre:border prose-pre:border-border prose-code:text-sm">
+            <article className="prose prose-neutral dark:prose-invert max-w-none prose-headings:scroll-mt-20 prose-a:text-primary hover:prose-a:underline prose-pre:bg-slate-900 prose-pre:text-slate-50 prose-pre:border prose-pre:border-slate-700 prose-code:text-sm prose-code:bg-slate-800 prose-code:text-orange-300 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none">
                 <ReactMarkdown remarkPlugins={[remarkGfm]}>
                     {post.content}
                 </ReactMarkdown>

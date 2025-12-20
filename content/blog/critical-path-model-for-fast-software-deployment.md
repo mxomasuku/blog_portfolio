@@ -54,14 +54,15 @@ If this is missing, can we still ship, charge, and learn within 30 days?
 	•	If the answer is no → critical path
 
 A task belongs on the critical path only if it meets at least one of the following conditions:
-	•	Blocks a user from receiving the core value
-	•	Prevents completion of the primary user task or promise
-	•	Breaks end-to-end transaction flow
-	•	Prevents deployment or stable operation in production
-	•	Introduces legal, regulatory, or compliance risk
-	•	Blocks revenue capture or validated market signal
-	•	Causes the product to function only in theory, not in reality
-	•	Cannot be temporarily replaced by a manual process
+
+- Blocks a user from receiving the core value
+- Prevents completion of the primary user task or promise
+- Breaks end-to-end transaction flow
+- Prevents deployment or stable operation in production
+- Introduces legal, regulatory, or compliance risk
+- Blocks revenue capture or validated market signal
+- Causes the product to function only in theory, not in reality
+- Cannot be temporarily replaced by a manual process
 
 Anything that does not meet these criteria is not essential to shipping. It is optional work masquerading as progress.
 

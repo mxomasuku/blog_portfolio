@@ -14,7 +14,7 @@ I picked this concept in Uni a couple of semesters ago and its revolutionised ho
 
 First I kind of noticed that in the era of AI-assisted development, shipping software has paradoxically become harder. 
 
-Developers qnd vibe coders are building apps in days, yet many of these products never make it to production. Teams get trapped in endless feature development, mistaking progress for momentum. The real problem is no longer code creation. It is deployment.
+Developers and vibe coders are building apps in days, yet many of these products never make it to production. Teams get trapped in endless feature development, mistaking progress for momentum. The real problem is no longer code creation. It is deployment.
 
 The Critical Path Model (CPM) exists to solve this exact problem and is suited for teams that have been stuck in development for too long, or for founders who want to ship fast in order to test real market viability.
 

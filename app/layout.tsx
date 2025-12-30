@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { Analytics } from "@vercel/analytics/next"
 
 const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
@@ -100,6 +101,7 @@ export default function RootLayout({
 
           <main className="flex-grow">
             {children}
+            <Analytics />
           </main>
 
           <Footer />

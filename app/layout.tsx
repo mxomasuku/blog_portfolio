@@ -101,11 +101,11 @@ export default function RootLayout({
 
           <main className="flex-grow">
             {children}
-            <Analytics />
           </main>
 
           <Footer />
         </ThemeProvider>
+        <Analytics debug={true} />
       </body>
 
     </html>
